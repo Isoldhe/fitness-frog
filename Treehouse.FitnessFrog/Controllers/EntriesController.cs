@@ -54,7 +54,11 @@ namespace Treehouse.FitnessFrog.Controllers
             if (ModelState.IsValid)
             {
                 _entriesRepository.AddEntry(entry);
-                // TODO display the entries list page
+
+                // Sends a 302 to the server and redirects user to the Index page. This is also called the post/redirect/get habit
+                // If you'd use View("Index") you cause the post request to be send again when the user refreshes the page
+                // Using this RedirectToAction method makes sure the POST request happens once, then redirects and then only GETs data
+                return RedirectToAction("Index");
 
             }
             return View(entry);
