@@ -7,6 +7,9 @@
 
 <h2>@ViewBag.Title</h2>
 
+<!-- Shows all validation errors at the top of the form -->
+@Html.ValidationSummary("The following errors were found:", new { @class = "alert alert-danger" })
+
 @using (Html.BeginForm())
 {
     <div class="row">
