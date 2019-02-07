@@ -60,6 +60,8 @@ namespace Treehouse.FitnessFrog.Controllers
             {
                 _entriesRepository.AddEntry(entry);
 
+                TempData["Message"] = "Your entry was succesfully added!";
+
                 // Sends a 302 to the server and redirects user to the Index page. This is also called the post/redirect/get habit
                 // If you'd use View("Index") you cause the post request to be send again when the user refreshes the page
                 // Using this RedirectToAction method makes sure the POST request happens once, then redirects and then only GETs data
@@ -102,6 +104,8 @@ namespace Treehouse.FitnessFrog.Controllers
             {
                 _entriesRepository.UpdateEntry(entry);
 
+                TempData["Message"] = "Your entry was succesfully updated!";
+
                 return RedirectToAction("Index");
             }
 
@@ -131,7 +135,9 @@ namespace Treehouse.FitnessFrog.Controllers
         public ActionResult Delete(int id)
         {
             _entriesRepository.DeleteEntry(id);
-            
+
+            TempData["Message"] = "Your entry was succesfully deleted!";
+
             return RedirectToAction("Index");
         }
 
