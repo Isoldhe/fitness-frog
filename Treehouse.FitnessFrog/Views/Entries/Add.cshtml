@@ -18,7 +18,7 @@
                 @Html.LabelFor(m => m.Date, new { @class = "control-label" })
                 <!-- this is the same as <input/>. Parameters: 1. name="Date" 2. value 3. css class -->
                 <!-- Value field is null, which will cause the helper method to use model state to get the field value. -->
-                @Html.TextBoxFor(m => m.Date, "{0:d}", new { @class = "form-control" })
+                @Html.TextBoxFor(m => m.Date, "{0:d}", new { @class = "form-control datepicker" })
                 <!-- {0:d} is C# standard date format string, 0 is the index, d is the short date type. Search Google for more examples -->
             </div>
 
