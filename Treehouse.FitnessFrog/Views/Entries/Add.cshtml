@@ -7,11 +7,11 @@
 
 <h2>@ViewBag.Title</h2>
 
-<!-- Shows all validation errors at the top of the form -->
-@Html.ValidationSummary("The following errors were found:", new { @class = "alert alert-danger" })
-
 @using (Html.BeginForm())
 {
+    <!-- Shows all validation errors at the top of the form -->
+    @Html.ValidationSummary("The following errors were found:", new { @class = "alert alert-danger" })
+
     <div class="row">
 
         <div class="col-md-6">
@@ -43,10 +43,10 @@
                     </label>
                     <label class="radio-inline">
                         @Html.RadioButtonFor(m => m.Intensity, Entry.IntensityLevel.Medium) @Entry.IntensityLevel.Medium
-                    </label>                    
+                    </label>
                     <label class="radio-inline">
                         @Html.RadioButtonFor(m => m.Intensity, Entry.IntensityLevel.High) @Entry.IntensityLevel.High
-                    </label>                    
+                    </label>
                 </div>
             </div>
 
@@ -55,7 +55,7 @@
                     <label>
                         @Html.CheckBoxFor(m => m.Exclude) @Html.DisplayNameFor(m => m.Exclude)
                     </label>
-                </div>                
+                </div>
             </div>
 
         </div>
